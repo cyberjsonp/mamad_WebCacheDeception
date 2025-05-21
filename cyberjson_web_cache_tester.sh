@@ -2,19 +2,35 @@
 
 clear
 
-# ASCII Logo and Header
-echo "==============================================="
-echo " ██████╗ ██╗   ██╗███████╗██████╗              "
-echo "██╔═══██╗██║   ██║██╔════╝██╔══██╗             "
-echo "██║   ██║██║   ██║█████╗  ██████╔╝             "
-echo "██║   ██║██║   ██║██╔══╝  ██╔═══╝              "
-echo "╚██████╔╝╚██████╔╝███████╗██║                  "
-echo " ╚═════╝  ╚═════╝ ╚══════╝╚═╝                  "
-echo "              CyberJson                        "
-echo "      Web Cache Deception Tester               "
-echo "  Twitter/X: https://x.com/m0x_mw4_d           "
-echo "==============================================="
-echo
+
+
+
+
+echo "
+__        _______ ____     ____    _    ____ _   _ _____ 
+\ \      / / ____| __ )   / ___|  / \  / ___| | | | ____|
+ \ \ /\ / /|  _| |  _ \  | |     / _ \| |   | |_| |  _|  
+  \ V  V / | |___| |_) | | |___ / ___ \ |___|  _  | |___ 
+   \_/\_/  |_____|____/   \____/_/   \_\____|_| |_|_____|
+"
+
+echo "                                     _        "
+echo " _ __ ___   __ _ _ __ ___   __ _  __| |       "
+echo "| '_ \` _ \ / _\` | '_ \` _ \ / _\` |/ _\` |       "
+echo "| | | | | | (_| | | | | | | (_| | (_| |       "
+echo "|_| |_| |_|\\__,_|_| |_| |_|\\__,_|\\__,_|       "
+echo "  ___ _   _| |__   ___ _ __(_)___  ___  _ __  "
+echo " / __| | | | '_ \ / _ \ '__| / __|/ _ \| '_ \ "
+echo "| (__| |_| | |_) |  __/ |  | \__ \ (_) | | | |"
+echo " \___|\__, |_.__/ \___|_|  |_|___/\___/|_| |_|"
+echo "      |___/                                    "
+echo "             MamadDeception                    "
+
+
+
+
+                                                                 
+
 
 # Check Bash version
 bash_major_version=$(bash --version | head -n1 | awk '{print $4}' | cut -d'.' -f1)
@@ -84,9 +100,32 @@ params=(
 "?mobile=true" "?desktop=false" "?version=1" "?old=1" "?test=deception"
 )
 
-# Custom headers (45+)
-header_names=( ... )  # keep your original list
-header_values=( ... ) # keep your original list
+header_names=(
+"Cache-Control" "Cache-Control" "Pragma" "Expires" "Accept-Encoding"
+"X-Requested-With" "Referer" "Origin" "X-Forwarded-For" "Forwarded"
+"Via" "Connection" "Upgrade-Insecure-Requests" "If-Modified-Since"
+"If-None-Match" "TE" "Accept-Language" "DNT" "Keep-Alive"
+"Authorization" "Range" "User-Agent" "X-Forwarded-Proto"
+"Accept" "Sec-Fetch-Dest" "Sec-Fetch-Mode" "Sec-Fetch-Site"
+"Sec-Fetch-User" "X-CSRF-Token" "X-Frame-Options" "Cookie"
+"X-Real-IP" "X-Original-URL" "X-Rewrite-URL" "Content-Type"
+"Content-Length" "Access-Control-Allow-Origin" "Access-Control-Allow-Headers"
+"Host" "X-Api-Version" "X-Powered-By" "X-Cache-Status" "X-Cache"
+"X-Source" "X-Debug"
+)
+header_values=(
+"no-cache" "max-age=0" "no-cache" "-1" "gzip, deflate"
+"XMLHttpRequest" "https://google.com" "https://evil.com"
+"127.0.0.1" "for=127.0.0.1" "1.1 localhost" "close" "1"
+"Thu, 01 Jan 1970 00:00:00 GMT" "W/\"etag123\"" "trailers"
+"en-US,en;q=0.9" "1" "timeout=5, max=1000"
+"Bearer deadbeef" "bytes=0-100" "Mozilla/5.0"
+"https" "*/*" "document" "navigate" "same-origin" "?1"
+"deadbeef" "DENY" "PHPSESSID=deadbeef" "127.0.0.1"
+"/secret/index.php" "/hidden/file.php" "application/json"
+"0" "*" "Authorization, Content-Type" "example.com"
+"2.0" "PHP/8.2.0" "MISS" "MISS" "scanner" "true"
+)
 
 # User-Agents
 user_agents=(
@@ -96,8 +135,20 @@ user_agents=(
 "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) Safari/605.1.15"
 "Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X) Safari/605.1.15"
 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Edge/124.0.2478.80"
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) Safari/605.1.15"
 "Mozilla/5.0 (Linux; Android 14; Pixel 7) Chrome/124.0.0.0"
+"Mozilla/5.0 (Linux; Android 14; Pixel 7 Pro) Chrome/124.0.0.0"
+"Mozilla/5.0 (X11; Linux x86_64) Chrome/124.0.0.0"
+"Mozilla/5.0 (Windows NT 11.0; Win64; x64) Firefox/125.0"
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 13_6) Chrome/123.0.0.0"
+"Mozilla/5.0 (Linux; Android 14; SM-G998B) Chrome/124.0.0.0"
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Opera/108.0.0.0"
+"Mozilla/5.0 (iPhone; CPU iPhone OS 16_7 like Mac OS X) Chrome/124.0.0.0"
+"Mozilla/5.0 (Linux; Android 14; Pixel 8) Firefox/125.0"
+"Mozilla/5.0 (iPad; CPU OS 16_7 like Mac OS X) Chrome/124.0.0.0"
 "Mozilla/5.0 (X11; Linux x86_64) Opera/108.0.0.0"
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Vivaldi/6.7.3329.39"
+"Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) Vivaldi/6.7.3329.39"
 )
 
 user_agents_str="${user_agents[*]}"
