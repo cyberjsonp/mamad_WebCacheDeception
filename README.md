@@ -5,7 +5,7 @@
 
 
 
-# CyberJson Web Cache Deception Tester [mamad_WebCacheDeception]
+# CyberJson Web Cache Deception Tester 
 
 
 **Twitter/X:**  [@m0x_mw4_d](https://x.com/m0x_mw4_d)
